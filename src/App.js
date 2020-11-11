@@ -24,7 +24,6 @@ const App = () => {
         }
     }, 0)
 
-
     useEffect(() => {
             if (news.length === 0) {
                 axios.get(URL).then(response => setNews(response.data.articles))
@@ -40,9 +39,9 @@ const App = () => {
                     ]))
                 }
             }
-            window.addEventListener("scroll", debounce(updateNews, 3000));
+            window.addEventListener("scroll", debounce(updateNews, 1500));
             return () => {
-                window.removeEventListener("scroll", debounce(updateNews, 3000));
+                window.removeEventListener("scroll", debounce(updateNews, 1500));
             };
         }, []
     )
@@ -50,7 +49,6 @@ const App = () => {
     const handleClickNews = (id) => {
         setActiveNews(id)
         setBackHeight(-document.documentElement.getBoundingClientRect().top)
-        console.log(document.documentElement.getBoundingClientRect())
     }
 
     return (
