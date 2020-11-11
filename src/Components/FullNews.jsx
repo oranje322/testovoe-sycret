@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 const FullNews = ({data}) => {
     const {title, description, urlToImage} = data
-
-    window.scrollTo(0, 0)
+console.log('render')
+    // window.scrollTo(0, 0)
 
     return (
         <div className={'full-news-block'}>
